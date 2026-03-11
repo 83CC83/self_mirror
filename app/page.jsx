@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 
 // ── 工作情境題 ──
@@ -183,7 +185,7 @@ export default function SelfMirror() {
   const [result, setResult] = useState(null);
 
   const questions = context === "work" ? WORK_QUESTIONS : LIFE_QUESTIONS;
-  const labels = context === "work" ? WORK_LABELS : LIFE_LABELS;
+  const labels = (context ?? "work") === "work" ? WORK_LABELS : LIFE_LABELS;
   const q = questions[currentQ];
   const isLastQ = currentQ === questions.length - 1;
 
