@@ -213,6 +213,10 @@ export default function SelfMirror() {
   };
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [step]);
+
+  useEffect(() => {
     if (step !== "loading") return;
     const runAnalyze = async () => {
       const labelTexts = labels.filter(l => selectedLabels.includes(l.id)).map(l => l.text);
@@ -293,7 +297,7 @@ export default function SelfMirror() {
             <p style={{ fontSize: 15, color: "#6b7280", lineHeight: 1.9, fontFamily: "Noto Sans TC, sans-serif", margin: "0 0 40px" }}>
               你選的每一個選項，<br/>都在說一件你自己可能沒注意到的事。
             </p>
-            <button className="next-btn" onClick={() => setTimeout(() => setStep("context"), 50)} style={{
+            <button className="next-btn" onClick={() => { setStep("context"); }} style={{
               width: "100%", padding: "16px 24px",
               background: "#1a1a1a", border: "none", borderRadius: 12,
               color: "#faf7f2", fontSize: 15, fontWeight: 600,
@@ -306,7 +310,7 @@ export default function SelfMirror() {
         {/* ── CONTEXT ── */}
         {step === "context" && (
           <div style={{ animation: "fadeIn 0.5s ease-out" }}>
-            <button onClick={() => setStep("intro")} style={{
+            <button onClick={() => { setStep("intro"); }} style={{
               background: "transparent", border: "1px solid #e5e7eb",
               borderRadius: 20, padding: "4px 14px", fontSize: 11,
               color: "#9ca3af", cursor: "pointer",
@@ -368,7 +372,7 @@ export default function SelfMirror() {
             <div style={{ fontSize: 12, color: "#d1d5db", fontFamily: "Noto Sans TC, sans-serif", marginBottom: 16, textAlign: "right" }}>
               已選 {selectedLabels.length} / 最多 5 個
             </div>
-            <button className="next-btn" onClick={() => selectedLabels.length > 0 && setStep("questions")} style={{
+            <button className="next-btn" onClick={() => { if (selectedLabels.length > 0) { setStep("questions"); } }} style={{
               width: "100%", padding: "16px",
               background: selectedLabels.length > 0 ? "#1a1a1a" : "#e5e7eb",
               border: "none", borderRadius: 12,
