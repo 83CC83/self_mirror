@@ -70,7 +70,7 @@ const WORK_QUESTIONS = [
 const LIFE_QUESTIONS = [
   {
     id: "l1",
-    scenario: "朋友傳訊說晚上臨時有事，取消了你們計劃已久的約。你的第一反應是？",
+    scenario: "朋友傳訊息說晚上臨時有事，取消了你們計劃已久的約。你的第一反應是？",
     options: [
       { label: "沒關係啊，傳個貼圖說下次見", value: "A" },
       { label: "有點失落，但理解對方，傳個訊息說沒事", value: "B" },
@@ -132,34 +132,33 @@ const LIFE_QUESTIONS = [
 
 // ── 自我標籤 ──
 const WORK_LABELS = [
-  { id: "w_direct", hint: "有意見直接說，不繞圈子",   text: "我說話不拐彎抹角" },
-  { id: "w_calm", hint: "出狀況時反而更清醒",     text: "壓力下我很冷靜" },
+  { id: "w_calm", hint: "情緒來了但還是能做決定",     text: "我不容易被情緒影響判斷" },
   { id: "w_plan", hint: "沒有計劃就很難開始",     text: "我是計劃型的人" },
-  { id: "w_flex", hint: "臨時變動不太會影響我",     text: "我適應力強" },
+  { id: "w_flex", hint: "計劃被改掉我還是能繼續",     text: "臨時變動不太會打亂我" },
   { id: "w_lead", hint: "自然會去掌握方向和節奏",     text: "我習慣主導事情" },
   { id: "w_detail", hint: "細節出錯會讓我很不舒服",   text: "我很注重細節" },
-  { id: "w_border", hint: "下班就是下班",   text: "我的工作界線很清楚" },
+  { id: "w_border", hint: "分得清楚哪些是我該做的",   text: "我知道什麼是我的責任" },
   { id: "w_collab", hint: "氣氛不好比事情沒做好更讓我在意",   text: "我重視團隊和諧" },
   { id: "w_ambition", hint: "做到八十分還是覺得不夠", text: "我對自己要求很高" },
-  { id: "w_feedback", hint: "覺得有問題會直接說", text: "我不怕給別人反饋" },
-  { id: "w_logic", hint: "用感覺做決定會讓我不安",    text: "我做決定靠理性分析" },
+  { id: "w_feedback", hint: "看到問題會直接指出來", text: "我習慣直接指出問題" },
+  { id: "w_logic", hint: "沒想好不太會說出來",    text: "我習慣把事情想清楚再開口" },
   { id: "w_honest", hint: "不太會為了讓人好過而說場面話",   text: "我有話直說" },
   { id: "w_indep", hint: "自己做比較放心",    text: "我喜歡獨立作業" },
   { id: "w_fair", hint: "誰多做誰少做我都看在眼裡",     text: "我很在意公平" },
   { id: "w_protect", hint: "就算很趕也不會表現出來",  text: "我不輕易讓人看見壓力" },
-  { id: "w_selfcrit", hint: "出錯之後會一直想", text: "我很難原諒自己的失誤" },
-  { id: "w_trust", hint: "做決定習慣自己判斷",    text: "我不太依賴別人給意見" },
+  { id: "w_selfcrit", hint: "對自己的標準比對別人高", text: "我對自己比對別人嚴格" },
+  { id: "w_trust", hint: "做完不太需要人說好才放心",    text: "我不需要別人認可" },
   { id: "w_read", hint: "會注意到別人沒說出口的部分",     text: "我很會察言觀色" },
   { id: "w_carry", hint: "問題先自己消化，不太找人幫",    text: "我習慣扛下來再說" },
 ];
 
 const LIFE_LABELS = [
-  { id: "l_easygoing", hint: "答應了之後才後悔", text: "我不太會拒絕別人" },
+  { id: "l_easygoing", hint: "知道不想但還是答應了", text: "我很難說不" },
   { id: "l_express", hint: "不舒服不太會憋著",   text: "我直接表達情緒" },
   { id: "l_indep", hint: "不太需要別人確認我的決定",     text: "我很獨立" },
   { id: "l_empath", hint: "對方心情不好我馬上感覺到",    text: "我很能感受別人的情緒" },
   { id: "l_social", hint: "跟人相處讓我有能量",    text: "我喜歡社交" },
-  { id: "l_conflict", hint: "有問題寧願攤開來說",  text: "我不怕衝突" },
+  { id: "l_conflict", hint: "說真話比讓人好過更重要",  text: "我不怕讓人失望" },
   { id: "l_present", hint: "不太會為還沒發生的事擔心",   text: "我活在當下" },
   { id: "l_care", hint: "說話前會先想對方聽了會怎樣",      text: "我很在意別人感受" },
   { id: "l_border", hint: "什麼可以什麼不行，我很清楚",    text: "我的界線很明確" },
@@ -289,7 +288,7 @@ export default function SelfMirror() {
         {step === "intro" && (
           <div style={{ animation: "fadeIn 0.6s ease-out" }}>
             <div style={{ fontSize: 11, letterSpacing: 6, color: "#9ca3af", fontFamily: "Noto Sans TC, sans-serif", marginBottom: 16 }}>SELF MIRROR</div>
-            <h1 style={{ fontSize: 32, fontWeight: 700, color: "#1a1a1a", lineHeight: 1.4, margin: 0 }}>你以為的自己<br/>和真實的你</h1>
+            <h1 style={{ fontSize: 32, fontWeight: 700, color: "#1a1a1a", lineHeight: 1.4, margin: 0 }}>你認識自己嗎</h1>
             <div style={{ width: 40, height: 2, background: "#1a1a1a", marginTop: 20, marginBottom: 24 }} />
             <p style={{ fontSize: 15, color: "#6b7280", lineHeight: 1.9, fontFamily: "Noto Sans TC, sans-serif", margin: "0 0 40px" }}>
               你選的每一個選項，<br/>都在說一件你自己可能沒注意到的事。
@@ -299,7 +298,7 @@ export default function SelfMirror() {
               background: "#1a1a1a", border: "none", borderRadius: 12,
               color: "#faf7f2", fontSize: 15, fontWeight: 600,
               fontFamily: "Noto Sans TC, sans-serif", letterSpacing: 1,
-            }}>開始 →</button>
+            }}>開始</button>
             <div style={{ textAlign: "center", marginTop: 16, fontSize: 12, color: "#d1d5db", fontFamily: "Noto Sans TC, sans-serif" }}>約 3 分鐘 · 不需要登入</div>
           </div>
         )}
@@ -313,23 +312,22 @@ export default function SelfMirror() {
               color: "#9ca3af", cursor: "pointer",
               fontFamily: "Noto Sans TC, sans-serif", marginBottom: 24,
               display: "block",
-            }}>← 返回</button>
+            }}>返回</button>
             <div style={{ fontSize: 11, letterSpacing: 4, color: "#9ca3af", fontFamily: "Noto Sans TC, sans-serif", marginBottom: 32 }}>STEP 1 / 3</div>
             <h2 style={{ fontSize: 22, fontWeight: 700, color: "#1a1a1a", margin: "0 0 10px" }}>今天想照哪面鏡子？</h2>
             <p style={{ fontSize: 13, color: "#9ca3af", lineHeight: 1.8, fontFamily: "Noto Sans TC, sans-serif", margin: "0 0 36px" }}>
-              工作和生活裡的你，可能很不一樣。
+              先選一個場景。
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {[
-                { value: "work", emoji: "💼", title: "工作中的我", desc: "面對主管、同事、任務、壓力時的選擇" },
-                { value: "life", emoji: "🌿", title: "生活中的我", desc: "面對朋友、關係、自由時間時的選擇" },
+                { value: "work", emoji: "", title: "工作中的我", desc: "面對主管、同事、任務、壓力時的選擇" },
+                { value: "life", emoji: "", title: "生活中的我", desc: "面對朋友、關係、自由時間時的選擇" },
               ].map(opt => (
                 <button key={opt.value} className="ctx-btn" onClick={() => { setContext(opt.value); setSelectedLabels([]); setAnswers({}); setCurrentQ(0); setCurrentSelection(null); setResult(null); setStep("labels"); }} style={{
                   padding: "22px 24px", background: "#fff",
                   border: "1.5px solid #e5e7eb", borderRadius: 14,
                   textAlign: "left", cursor: "pointer",
                 }}>
-                  <div style={{ fontSize: 24, marginBottom: 8 }}>{opt.emoji}</div>
                   <div style={{ fontSize: 16, fontWeight: 600, color: "#1a1a1a", marginBottom: 4, fontFamily: "Noto Sans TC, sans-serif" }}>{opt.title}</div>
                   <div style={{ fontSize: 13, color: "#9ca3af", fontFamily: "Noto Sans TC, sans-serif" }}>{opt.desc}</div>
                 </button>
@@ -341,7 +339,7 @@ export default function SelfMirror() {
         {/* ── LABELS ── */}
         {step === "labels" && (
           <div style={{ animation: "fadeIn 0.5s ease-out" }}>
-            <button onClick={() => { setStep("context"); setSelectedLabels([]); setContext(null); }} style={{ background: "transparent", border: "1px solid #e5e7eb", borderRadius: 20, padding: "4px 14px", fontSize: 11, color: "#9ca3af", cursor: "pointer", fontFamily: "Noto Sans TC, sans-serif", marginBottom: 24, display: "block" }}>← 返回</button>
+            <button onClick={() => { setStep("context"); setSelectedLabels([]); setContext(null); }} style={{ background: "transparent", border: "1px solid #e5e7eb", borderRadius: 20, padding: "4px 14px", fontSize: 11, color: "#9ca3af", cursor: "pointer", fontFamily: "Noto Sans TC, sans-serif", marginBottom: 24, display: "block" }}>返回</button>
             <div style={{ fontSize: 11, letterSpacing: 4, color: "#9ca3af", fontFamily: "Noto Sans TC, sans-serif", marginBottom: 32 }}>STEP 2 / 3</div>
             <h2 style={{ fontSize: 22, fontWeight: 700, color: "#1a1a1a", margin: "0 0 8px" }}>你覺得自己是怎樣的人？</h2>
             <p style={{ fontSize: 13, color: "#9ca3af", lineHeight: 1.8, fontFamily: "Noto Sans TC, sans-serif", margin: "0 0 28px" }}>
@@ -378,7 +376,7 @@ export default function SelfMirror() {
               fontSize: 15, fontWeight: 600,
               fontFamily: "Noto Sans TC, sans-serif", letterSpacing: 1,
               cursor: selectedLabels.length > 0 ? "pointer" : "default",
-            }}>繼續 →</button>
+            }}>繼續</button>
           </div>
         )}
 
@@ -388,7 +386,7 @@ export default function SelfMirror() {
             {/* Header — static */}
             <div style={{ marginBottom: 32 }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-                <button onClick={() => { if (currentQ === 0) { setStep("labels"); setCurrentSelection(null); } else { const prevIdx = currentQ - 1; const prevQid = questions[prevIdx]?.id; setCurrentQ(prevIdx); setCurrentSelection(answers[prevQid] ?? null); } }} style={{ background: "transparent", border: "1px solid #e5e7eb", borderRadius: 20, padding: "4px 14px", fontSize: 11, color: "#9ca3af", cursor: "pointer", fontFamily: "Noto Sans TC, sans-serif" }}>← 返回</button>
+                <button onClick={() => { if (currentQ === 0) { setStep("labels"); setCurrentSelection(null); } else { const prevIdx = currentQ - 1; const prevQid = questions[prevIdx]?.id; setCurrentQ(prevIdx); setCurrentSelection(answers[prevQid] ?? null); } }} style={{ background: "transparent", border: "1px solid #e5e7eb", borderRadius: 20, padding: "4px 14px", fontSize: 11, color: "#9ca3af", cursor: "pointer", fontFamily: "Noto Sans TC, sans-serif" }}>返回</button>
               <div style={{ fontSize: 11, letterSpacing: 4, color: "#9ca3af", fontFamily: "Noto Sans TC, sans-serif" }}>STEP 3 / 3</div>
                 <div style={{ fontSize: 11, color: "#9ca3af", fontFamily: "Noto Sans TC, sans-serif" }}>{currentQ + 1} / {questions.length}</div>
               </div>
@@ -425,7 +423,7 @@ export default function SelfMirror() {
                 fontSize: 14, fontWeight: 600, letterSpacing: 2,
                 fontFamily: "Noto Sans TC, sans-serif",
                 cursor: currentSelection ? "pointer" : "default",
-              }}>{isLastQ ? "查看結果 →" : "下一題 →"}</button>
+              }}>{isLastQ ? "查看結果" : "下一題"}</button>
             </div>
           </div>
         )}
